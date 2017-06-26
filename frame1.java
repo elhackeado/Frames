@@ -9,4 +9,5 @@ class frame1
 		f1.setLocation(100,100);
 		f1.setSize(600,600);
 	}
+
 }
