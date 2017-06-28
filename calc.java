@@ -9,6 +9,7 @@ class calc extends Frame implements ActionListener
 		double result;
 		String op;
 		int c=0;
+		int r=0;
 		
 		
 		calc(String s)
@@ -113,7 +114,13 @@ class calc extends Frame implements ActionListener
 			
 			else if(msg.equals("0")||msg.equals("00")||msg.equals("1")||msg.equals("2")||msg.equals("3")||msg.equals("4")||msg.equals("5")||msg.equals("6")||msg.equals("7")||msg.equals("8")||msg.equals("9"))
 			{
+				if(r==0)
 				t1.setText(t1.getText()+msg);
+				else
+				{
+					t1.setText("");
+					r=0;
+				}
 			}
 			
 			else if(msg.equals("CE"))
@@ -161,8 +168,18 @@ class calc extends Frame implements ActionListener
 				
 				t1.setText(""+result);
 				t1.setEditable(false);
-				
+				r=1;
 			}
+			
+			else if(msg.equals("SQRT"))
+			{
+				num1=Double.parseDouble(t1.getText());
+				result=Math.sqrt(num1);
+				t1.setText(""+result);
+				t1.setEditable(false);
+			}
+			
+			
 			
 		}
 		
